@@ -1,0 +1,43 @@
+﻿@model ValidUser 
+<h1>Welcome to the Dojo Auction</h1>
+
+<h2>Login</h2>
+<form action="LoginUser" method="post">
+    <label>Username:</label>
+    <input type="text" name="UserName">
+    <br>
+    <label>Password:</label>
+    <input type="password" name="Password">
+    <br>
+    <input type="submit">
+    <p>@ViewBag.Message</p>
+</form>
+<br>
+<h2>Registration</h2>
+<form asp-action="RegisterUser" method="POST">
+    <label>First Name:</label>
+    <input asp-for="FirstName">
+    <span asp-validation-for="FirstName"></span>
+    <br>
+    
+    <label>Last Name:</label>
+    <input asp-for="LastName">
+    <span asp-validation-for="LastName"></span>
+    <br>
+    
+    <label>Username:</label>
+    <input asp-for="Username">
+    <span asp-validation-for="Username"></span>
+    <br>
+    
+    <label>Password:</label>
+    <input type="password" asp-for="Password">
+    <span asp-validation-for="Password"></span>
+    <br>
+    
+    <label>Confirm Password:</label>
+    <input type="password" name="ConfirmPassword">
+    <span asp-validation-for="ConfirmPassword"></span>
+    <br>
+    <input type="submit">
+</form>

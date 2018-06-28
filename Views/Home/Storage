@@ -1,0 +1,4 @@
+<h4>Current Highest Bid: @ViewBag.Bidding.BidAmount by @ViewBag.Bidding.User.FirstName</h4>
+ViewBag.TopBid = _context.Bids.FromSql("SELECT * FROM auctiondb.bids").OrderBy(b => b.BidAmount).SingleOrDefault();
+
+Auction Seller = _context.Auctions.SingleOrDefault(s => s.AuctionID == AuctionID).Include(a => a.MyAuctions);

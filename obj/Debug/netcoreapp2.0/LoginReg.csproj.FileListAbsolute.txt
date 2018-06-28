@@ -1,0 +1,30 @@
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\bin\Debug\netcoreapp2.0\LoginReg.deps.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\bin\Debug\netcoreapp2.0\LoginReg.runtimeconfig.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\bin\Debug\netcoreapp2.0\LoginReg.runtimeconfig.dev.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\bin\Debug\netcoreapp2.0\LoginReg.dll
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\bin\Debug\netcoreapp2.0\LoginReg.pdb
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\obj\Debug\netcoreapp2.0\LoginReg.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\obj\Debug\netcoreapp2.0\LoginReg.AssemblyInfoInputs.cache
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\obj\Debug\netcoreapp2.0\LoginReg.AssemblyInfo.cs
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\obj\Debug\netcoreapp2.0\LoginReg.dll
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg\obj\Debug\netcoreapp2.0\LoginReg.pdb
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\bin\Debug\netcoreapp2.0\LoginReg.deps.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\bin\Debug\netcoreapp2.0\LoginReg.runtimeconfig.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\bin\Debug\netcoreapp2.0\LoginReg.runtimeconfig.dev.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\bin\Debug\netcoreapp2.0\LoginReg.dll
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\bin\Debug\netcoreapp2.0\LoginReg.pdb
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\obj\Debug\netcoreapp2.0\LoginReg.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\obj\Debug\netcoreapp2.0\LoginReg.AssemblyInfoInputs.cache
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\obj\Debug\netcoreapp2.0\LoginReg.AssemblyInfo.cs
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\obj\Debug\netcoreapp2.0\LoginReg.dll
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy\obj\Debug\netcoreapp2.0\LoginReg.pdb
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\bin\Debug\netcoreapp2.0\LoginReg.deps.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\bin\Debug\netcoreapp2.0\LoginReg.runtimeconfig.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\bin\Debug\netcoreapp2.0\LoginReg.runtimeconfig.dev.json
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\bin\Debug\netcoreapp2.0\LoginReg.dll
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\bin\Debug\netcoreapp2.0\LoginReg.pdb
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\obj\Debug\netcoreapp2.0\LoginReg.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\obj\Debug\netcoreapp2.0\LoginReg.AssemblyInfoInputs.cache
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\obj\Debug\netcoreapp2.0\LoginReg.AssemblyInfo.cs
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\obj\Debug\netcoreapp2.0\LoginReg.dll
+C:\Users\Admin\Dropbox\Coding\C#\LoginReg - Copy - Copy\obj\Debug\netcoreapp2.0\LoginReg.pdb

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+@model LoginReg.Models.Auction
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Auction House</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/site.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Current Auctions</h1>
+    <h4>Hi @ViewBag.Name</h4>
+    <h4>
+        <a href="Logout">Logout</a>
+    </h4>
+    <br>
+    <table>
+            <tr>
+                <th>Product</th>
+                <th>Seller</th>
+                <th>Top Bid</th>
+                <th>Time Remaining</th>
+                <th>Actions</th>
+            </tr>
+            <tbody>
+                @foreach(var auction in ViewBag.AllAuctions) 
+                    {
+                    <tr>
+                        <td>
+                            <p><a href="Product/@auction.AuctionID">@auction.Product</a></p>
+                        </td>
+                        <td>
+                            <p>@auction.Seller</p>
+                        </td>
+                        <td>
+                            <p>@ViewBag.TopBid.BidAmount</p>
+                        </td>
+                        <td>
+                            <p>@auction.TimeRemaining.ToShortDateString()</p>
+                        </td>
+                        <td>
+                             @if(auction.UserID == @ViewBag.UserID) 
+                             {
+                            <a href="/Delete/@auction.AuctionID">Delete</a>
+                            }
+                        </td>
+                    </tr>
+                    } 
+            </tbody>
+    </table>
+    <a href="New"><button>New Auction</button></a>
+
+</body>
+</html>

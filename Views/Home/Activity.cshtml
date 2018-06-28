@@ -1,0 +1,13 @@
+@{ ViewData["Title"] = "View Activity Page"; }
+<h1 id="header">Dojo Activity Center</h1>
+<hr>
+<h3>Event Name: @ViewBag.CurrentActivity.ActivityName</h3>
+<br>
+<h4>Event Coordinator: @ViewBag.CurrentActivity.EventCoordinator</h4>
+<br>
+<h4>Description</h4>
+<p>@ViewBag.CurrentActivity.Description</p>
+<br>
+<h4>Participants</h4>
+<br>
+<button>Join</button>

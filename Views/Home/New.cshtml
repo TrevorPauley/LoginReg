@@ -1,0 +1,40 @@
+@{ 
+
+} 
+@model LoginReg.Models.ValidAuction
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Auction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>New Auctio</h1>
+    <h4><a href="http://localhost:5000/Success">Home</a></h4><h4><a href="Logout">Logout</a></h4>
+    <h2>Hello @ViewBag.Name</h2>
+    <form action="NewAuction" method="POST">
+        <label>Product Name</label>:
+        <input asp-for="Product">
+        <span asp-validation-for="Product"></span></input>
+        <br>
+        <label>Description:</label>
+        <input asp-for="Description">
+        <span asp-validation-for="Description"></span></input>
+        <br>
+        <label>Starting Bid:</label>
+        <input asp-for="StartingBid">
+        <span asp-validation-for="StartingBid"></span></label>
+        <br>
+        <label>End Date:</label>
+        <input asp-for="TimeRemaining" min="datetime-local">
+        <span asp-validation-for="TimeRemaining"></span></label>
+        <a href="New">
+            <button type="Submit" value="Submit">Create Auction</button>
+        </a>
+    </form>
+</body>
+</html>
