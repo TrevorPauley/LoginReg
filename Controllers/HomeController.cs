@@ -35,7 +35,7 @@ namespace LoginReg.Controllers
         {
             if (ModelState.IsValid)
             {
-                User ExistingUser = _context.Users.SingleOrDefault(user => user.Username == MyUser.Username);
+                User ExistingUser = _context.users.SingleOrDefault(user => user.Username == MyUser.Username);
                 if (ExistingUser != null)
                 {
                     ViewBag.Message = "An account with this email already exists.";
@@ -53,11 +53,11 @@ namespace LoginReg.Controllers
                 ViewData.Clear();
                 HttpContext.Session.Clear();
                 _context.Add(NewPerson);
-                // OR _context.Users.Add(NewPerson);
+                // OR _context.users.Add(NewPerson);
                 _context.SaveChanges();
-                NewPerson = _context.Users.SingleOrDefault(user => user.Username == NewPerson.Username);
+                NewPerson = _context.users.SingleOrDefault(user => user.Username == NewPerson.Username);
                 HttpContext.Session.SetString("Name", NewPerson.FirstName);
-                var RegistrarID = _context.Users.Where(Registrar => Registrar.UserID == NewPerson.UserID).First();
+                var RegistrarID = _context.users.Where(Registrar => Registrar.UserID == NewPerson.UserID).First();
                 HttpContext.Session.SetInt32("UserID", RegistrarID.UserID);
                 TempData["UserID"] = HttpContext.Session.GetInt32("UserID");
                 TempData["Name"] = HttpContext.Session.GetString("Name");
@@ -74,7 +74,7 @@ namespace LoginReg.Controllers
         public IActionResult LoginUser(string Username, string Password)
         {
             //Is user in DB? User where or SingleOrDefault or firstordefault
-            User user = _context.Users.Where(Loginer => Loginer.Username == Username).SingleOrDefault();
+            User user = _context.users.Where(Loginer => Loginer.Username == Username).SingleOrDefault();
             if (user != null && Password != null)
             {
                 var Hasher = new PasswordHasher<User>();
@@ -84,7 +84,7 @@ namespace LoginReg.Controllers
                     HttpContext.Session.Clear();
                     ViewData.Clear();
                     HttpContext.Session.SetString("Name", user.FirstName);
-                    var LoginID = _context.Users.Where(Loginer => Loginer.UserID == user.UserID).First();
+                    var LoginID = _context.users.Where(Loginer => Loginer.UserID == user.UserID).First();
                     HttpContext.Session.SetInt32("UserID", LoginID.UserID);
                     TempData["UserID"] = HttpContext.Session.GetInt32("UserID");
                     TempData["Name"] = HttpContext.Session.GetString("Name");
@@ -118,10 +118,10 @@ namespace LoginReg.Controllers
             }
             else
             {
-                ViewBag.Auctions = _context.Auctions.FromSql("SELECT * FROM auctiondb.auctions").ToList();
-                List<Auction> AllAuctions = _context.Auctions.Include(b => b.Bids).ToList();
-                ViewBag.TopBid = _context.Bids.FromSql("SELECT * FROM auctiondb.bids").OrderBy(b => b.BidAmount).FirstOrDefault();
-                ViewBag.AllAuctions = AllAuctions.OrderBy(t => t.TimeRemaining);
+                ViewBag.auctions = _context.auctions.FromSql("SELECT * FROM auctiondb.auctions").ToList();
+                List<Auction> Allauctions = _context.auctions.Include(b => b.Bids).ToList();
+                ViewBag.TopBid = _context.bids.FromSql("SELECT * FROM auctiondb.bids").OrderBy(b => b.BidAmount).FirstOrDefault();
+                ViewBag.Allauctions = Allauctions.OrderBy(t => t.TimeRemaining);
                 ViewBag.UserID = TempData["UserID"];
                 ViewBag.Name = TempData["Name"];
                 ViewBag.Message = TempData["Message"];
@@ -139,8 +139,8 @@ namespace LoginReg.Controllers
             }
             else
             {
-                ViewBag.CurrentProduct = _context.Auctions.Where(Product => Product.AuctionID == AuctionID).Include(u => u.Users).SingleOrDefault();
-                //ViewBag.Bidding = _context.Bids.Where(Bid => Bid.AuctionID == AuctionID).Include(u => u.Users).OrderByDescending(b => b.BidAmount).FirstOrDefault();
+                ViewBag.CurrentProduct = _context.auctions.Where(Product => Product.AuctionID == AuctionID).Include(u => u.Users).SingleOrDefault();
+                //ViewBag.Bidding = _context.bids.Where(Bid => Bid.AuctionID == AuctionID).Include(u => u.users).OrderByDescending(b => b.BidAmount).FirstOrDefault();
                 TempData["UserID"] = HttpContext.Session.GetInt32("UserID");
                 TempData["Name"] = HttpContext.Session.GetString("Name");
                 ViewBag.UserID = TempData["UserID"];
@@ -153,7 +153,7 @@ namespace LoginReg.Controllers
         [Route("Bid/{AuctionID}")]
         public IActionResult Bid(int Amount, int AuctionID)
         {
-            User Bidder = _context.Users.SingleOrDefault(user => user.UserID == HttpContext.Session.GetInt32("UserID"));
+            User Bidder = _context.users.SingleOrDefault(user => user.UserID == HttpContext.Session.GetInt32("UserID"));
             var Balance = Bidder.Cash;
             if(Bidder.Cash - Amount <= 0)
             {
@@ -235,10 +235,10 @@ namespace LoginReg.Controllers
             }
             else
             {
-                var myAuction = _context.Auctions.SingleOrDefault(A => A.AuctionID == AuctionID);
+                var myAuction = _context.auctions.SingleOrDefault(A => A.AuctionID == AuctionID);
                 TempData["UserID"] = HttpContext.Session.GetInt32("UserID");
                 TempData["Name"] = HttpContext.Session.GetString("Name");
-                _context.Auctions.Remove(myAuction);
+                _context.auctions.Remove(myAuction);
                 _context.SaveChanges();
                 return RedirectToAction("Success");
             }
